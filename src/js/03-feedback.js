@@ -18,7 +18,6 @@ const userForm = {
 };
     
     localStorage.setItem('feedback-form-state', JSON.stringify(userForm));
-    console.log(userForm);
 }
 
 
@@ -26,9 +25,17 @@ refs.form.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(evt) {
     evt.preventDefault();
+
+    const email = refs.emailInput.value;
+    const textarea = refs.textarea.value;
+
+    console.log(email);
+    console.log(textarea);
+
     evt.currentTarget.reset();
 
     localStorage.removeItem('feedback-form-state');
+        
 }
 
 

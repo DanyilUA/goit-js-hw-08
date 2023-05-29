@@ -11,7 +11,7 @@ if (savedTime) {
     player.setCurrentTime(savedTime);
 }
 
-player.on('play', throttle(function (data) {
+player.on('timeupdate', throttle(function (data) {
     localStorage.setItem('videoplayer-current-time', data.seconds);
     }, 1000)
 );
